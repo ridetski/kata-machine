@@ -32,17 +32,16 @@ function walk(maze: string[], wall: string, curr: Point, end: Point, seen: boole
   //recurse
   for (let i = 0; i < direction.length; i++) {
     const [x, y] = direction[i];
-    if (walk(maze, wall, {//next Point
+    if (walk(maze, wall, {
       x: curr.x + x,
       y: curr.y + y,
     }, end, seen, path)) {
-      //we at the end
       return true;
     }
   }
   //post
   path.pop();
-  //don't find the end
+
   return false;
 }
 
